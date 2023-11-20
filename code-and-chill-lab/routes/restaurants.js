@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const restaurantsCtrl = require('../controllers/restaurants')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// router.get('/', restaurantsCtrl.index)
+
+router.get('/new', restaurantsCtrl.new)
+
+// router.post('/', restaurantsCtrl.create)
 
 module.exports = router;
