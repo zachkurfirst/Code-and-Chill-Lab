@@ -4,6 +4,7 @@ module.exports = {
   new: newRestaurant,
   create,
   index,
+  show
 };
 
 function newRestaurant(req, res) {
@@ -32,4 +33,18 @@ async function index(req, res) {
   } catch (err) {
     console.log("index error", err);
   }
+}
+
+async function show(req, res) {
+    try {
+        // console.log(req.params.id)
+        // res.send('testing show page')
+        const restaurant = await Restaurant.findById(req.params.id)
+        res.render('restaurants/show', {
+            title: 'Restaurant Details',
+            restaurant
+        })
+    } catch(err) {
+        console.log('show error', err)
+    }
 }
