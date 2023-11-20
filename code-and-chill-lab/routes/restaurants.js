@@ -6,6 +6,6 @@ const restaurantsCtrl = require('../controllers/restaurants')
 
 router.get('/new', restaurantsCtrl.new)
 
-// router.post('/', restaurantsCtrl.create)
+router.post('/', restaurantsCtrl.create)
 
 module.exports = router;
