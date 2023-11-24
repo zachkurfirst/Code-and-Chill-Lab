@@ -14,4 +14,7 @@ router.post('/', restaurantsCtrl.create)
 // GET /restaurants/:id
 router.get('/:id', restaurantsCtrl.show)
 
+// DELETE /restaurants/:id
+router.delete('/:id', restaurantsCtrl.delete)
+
 module.exports = router;
